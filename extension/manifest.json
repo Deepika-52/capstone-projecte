@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "SafeContent Filter",
+    "version": "1.0",
+    "description": "Filters harmful content on webpages.",
+    "permissions": [
+      "scripting",
+      "activeTab"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*.youtube.com/*", "*://*.instagram.com/*"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ]
+  }
+  
